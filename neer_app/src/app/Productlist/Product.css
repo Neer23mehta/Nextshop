@@ -1,0 +1,27 @@
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+.listed{
+    height: auto;
+    width: 190px;
+    border: 1mm solid;
+    align-items: center;
+    text-align: center;
+    /* gap: 10px; */
+}
+.listed:hover{
+    transform: translateY(-5px);
+}
+.images{
+    background-image: contain;
+}
