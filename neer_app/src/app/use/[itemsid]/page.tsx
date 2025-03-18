@@ -1,5 +1,5 @@
 async function getApis(id:number){
-    const data = await fetch (`http://localhost:3003/api/users/${id}`)
+    const data = await fetch (`http://localhost:3000/api/users/${id}`)
     const users = await data.json();
     console.log("users",users)
     return users;
