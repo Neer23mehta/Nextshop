@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react"
 import "../addproduct/product.css"
+import Link from "next/link";
 
 export default function Page() {
     const [input, setinput] = useState({
@@ -81,6 +82,14 @@ export default function Page() {
                 >
                     Add Details
                 </button>
+
+            </div>
+            <div className="flex align-center flex col justify-center">
+                <Link href="/details">
+                <button className="px-4 py-2 mt-5 bg-red-500 rounded-md hover:bg-red-700 ">
+                    Show Details
+                </button>
+                </Link>
             </div>
         </div>
     );

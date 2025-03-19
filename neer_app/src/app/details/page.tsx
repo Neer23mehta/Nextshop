@@ -78,6 +78,9 @@ const Page = () => {
           })}
         </tbody>
       </table>
+      <div className="flex align-center flex col justify-center">
+        <Link href="/addproduct"><button className="px-4 py-2 mt-5 bg-green-500 text-white rounded-lg hover:bg-green-900 transition duration-300">Add New Details</button></Link>
+      </div>
     </div>
   );
 };

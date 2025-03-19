@@ -20,7 +20,14 @@ export async function POST(request) {
       await mongoose.connect(connectionSrt);
       let product = new Product(payload);
       const results = await product.save();
-      return NextResponse.json({ results, success: true });
+      if(!payload){
+        return NextResponse.json({
+          results:"please give details",success:false
+        },{status:401})
+      }
+      else{
+        return NextResponse.json({ results, success: true });
+      }
   } catch (error) {
       console.log(error);
   }
