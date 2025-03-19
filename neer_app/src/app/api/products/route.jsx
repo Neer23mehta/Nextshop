@@ -13,14 +13,15 @@ export async function GET(){
     console.log(error)
   }
 }
-export async function POST(request){
-    try {
-        const payload = await request.json();
-        await mongoose.connect(connectionSrt);
-        let product = new Product(payload)
-        const results = await product.save();
-        return NextResponse.json({results,success:true})
-    } catch (error) {
-        console.log(error)
-    }
+export async function POST(request) {
+  try {
+      const payload = await request.json();
+      console.log(payload); 
+      await mongoose.connect(connectionSrt);
+      let product = new Product(payload);
+      const results = await product.save();
+      return NextResponse.json({ results, success: true });
+  } catch (error) {
+      console.log(error);
+  }
 }

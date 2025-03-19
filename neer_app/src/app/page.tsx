@@ -56,6 +56,18 @@ export default function Home() {
           >
             Go to About Page
           </Link>
+          <Link
+            href="/addproduct"
+            className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-700 transition duration-300"
+          >
+            Add Details
+          </Link>
+          <Link
+            href="/details"
+            className="px-4 py-2 bg-violet-500 text-white rounded-lg hover:bg-violet-700 transition duration-300"
+          >
+            Details
+          </Link>
         </div>
 
         <button
