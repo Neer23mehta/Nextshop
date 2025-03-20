@@ -82,7 +82,13 @@ export default function Home() {
           >
             Add User Info
           </Link>
+          <Link href="/todo"
+            className="px-4 py-2 ml-5 bg-rose-500 text-white rounded-lg hover:bg-rose-700 transition duration-300"
+            >
+              Add Todo List 
+          </Link>
         </div>
+        
 
         <button
           onClick={() => router.push("/login")}

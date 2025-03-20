@@ -24,6 +24,7 @@ export default function Addusers (){
             />
             <button onClick={handleuser} className="px-4 py-2 mt-5 bg-red-500 rounded-md hover:bg-red-700 justify-ceter align-center ml-45 flex">Add User</button>
             <Link href="/removeuser">Remove User</Link>
+            <Link href="/apiadd">Users Details</Link>
         </div>
     )
 }

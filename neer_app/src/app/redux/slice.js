@@ -1,9 +1,14 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice, nanoid,current,  createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-    users:[]
+    UserApiData:[],
+    users:JSON.parse(localStorage.getItem("User"))?JSON.parse(localStorage.getItem("User")):[]
 }
 
+export const fetchApiUser = createAsyncThunk("Usersapi",async()=>{
+    const res = await fetch("https://dummyjson.com/users");
+    return res.json();
+})
  const slice = createSlice({
     name:"ADDUSER",
     initialState,
@@ -14,16 +19,26 @@ const initialState = {
                 name:action.payload
             }
             state.users.push(data)
+            const userdata = JSON.stringify(current(state.users))
+            localStorage.setItem("User",userdata)
         },
         deleteUser:(state,action) => {
             const deleteditem = state.users.filter((users)=>users.id !== action.payload);
             state.users = deleteditem
+            const remove = state.users.filter((users)=>users.id == action.payload)
+            localStorage.removeItem(JSON.stringify(remove))
         },
         editUser:(state,action) => {
             const edititem = state.users.filter((users)=>users.id == action.payload);
             state.users = edititem
         }
 
+    },
+    extraReducers:(builder) => {
+        builder.addCase(fetchApiUser.fulfilled,(state,action)=>{
+            state.isloading = false,
+            state.UserApiData = action.payload
+        })
     }
 })
 

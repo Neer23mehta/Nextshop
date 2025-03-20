@@ -13,7 +13,7 @@ export default function Page (){
         <div>
             <ul>
                 {
-                    userdata.map((items:any) => {
+                    userdata?.map((items:any) => {
                         const{id,name} =items
                         return (
                             <li key={id}>
