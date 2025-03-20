@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {Providers} from "./redux/providers"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+                <Providers>
         { Pathname !=="/login" && Pathname !=="/not-found"?
         <header>
           <nav className="bg-red-100 flex flex-row justify-end 
@@ -54,6 +56,7 @@ export default function RootLayout({
         null
         }
         {children}
+        </Providers>
       </body>
     </html>
   );
