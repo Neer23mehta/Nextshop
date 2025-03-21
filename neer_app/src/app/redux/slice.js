@@ -7,7 +7,8 @@ const initialState = {
 
 export const fetchApiUser = createAsyncThunk("Usersapi",async()=>{
     const res = await fetch("https://dummyjson.com/users");
-    return res.json();
+    const data = await res.json();
+    return data.users;
 })
  const slice = createSlice({
     name:"ADDUSER",
@@ -25,8 +26,8 @@ export const fetchApiUser = createAsyncThunk("Usersapi",async()=>{
         deleteUser:(state,action) => {
             const deleteditem = state.users.filter((users)=>users.id !== action.payload);
             state.users = deleteditem
-            const remove = state.users.filter((users)=>users.id == action.payload)
-            localStorage.removeItem(JSON.stringify(remove))
+            const userdata = JSON.stringify(deleteditem)
+            localStorage.setItem("User",userdata)
         },
         editUser:(state,action) => {
             const edititem = state.users.filter((users)=>users.id == action.payload);

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { deleteUser } from "../redux/slice";
 
 export default function Page (){
-    const userdata = useSelector((data:any)=>data.users)
+    const userdata = useSelector((data:any)=>data.userdata.users)
     const dispatch = useDispatch();
     const handledelete = (id:any) => {
         dispatch(deleteUser(id))
