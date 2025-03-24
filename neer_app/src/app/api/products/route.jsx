@@ -32,3 +32,20 @@ export async function POST(request) {
       console.log(error);
   }
 }
+
+// export async function POST(request){
+//   try {
+//     const payload = await request.json();
+//     await mongoose.connect(connectionSrt);
+//     let product = new Product(payload);
+//     const record = await product.save();
+//     if(!payload){
+//       return NextResponse.json({results:"Please enter Something",success:false},{status:401})
+//     }
+//     else {
+//       return NextResponse.json({results:record,success:true},{status:201})
+//     }
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }

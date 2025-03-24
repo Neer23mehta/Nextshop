@@ -3,7 +3,7 @@ async function fetchgetdata() {
     const data = await res.json()
     return data.users
 
-}
+}   
 
 export default async function Users() {
     const datas = await fetchgetdata();

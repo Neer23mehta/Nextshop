@@ -5,6 +5,7 @@ import "./globals.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {Providers} from "./redux/providers"
+import { SessionProvider } from "next-auth/react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SessionProvider>
                 <Providers>
         { Pathname !=="/login" && Pathname !=="/not-found"?
         <header>
@@ -57,6 +59,7 @@ export default function RootLayout({
         }
         {children}
         </Providers>
+        </SessionProvider>
       </body>
     </html>
   );

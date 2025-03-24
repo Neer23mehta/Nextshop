@@ -4,6 +4,7 @@ import { About } from "./About";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useSession, signIn, signOut } from "next-auth/react"
 // import { Roboto } from "next/font/google";
 
 // const roboto = Roboto({

@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   // images:{
   //   domains:""
   // }
-};
+  experimental:{
+    cssChunking:true,
+  },
+}satisfies NextConfig
 
 export default nextConfig;

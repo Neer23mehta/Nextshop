@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Products from "./Product"
 
 async function Fetchget() {
@@ -28,6 +29,7 @@ export default async function Product() {
                                 <p className="text-gray-700 mb-2">Stock: {stock}</p>
                                 <p className="text-gray-700 mb-2">Brand: {brand}</p>
                                 <p className="text-gray-700 mb-2">Weight: {weight} kg</p>
+                                <Link href={`Productlist/${id}`}>View More</Link>
                                 <p className="text-gray-700 mb-4">Dimension: {dimensions.width} x {dimensions.height} x {dimensions.length} cm</p>
                                 <Products price={price} />
                             </li>
