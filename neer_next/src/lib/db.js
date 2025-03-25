@@ -1,0 +1,1 @@
+export const connectionStr = "mongodb+srv://neermehta:neer2304@neerdb.lhvkp.mongodb.net/UsersDB?retryWrites=true&w=majority&appName=NeerDB"
