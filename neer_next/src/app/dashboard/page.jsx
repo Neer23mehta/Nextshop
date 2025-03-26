@@ -1,9 +1,5 @@
-import Userinfo from "../components/Userinfo";
+import UserInfo from "../components/Userinfo";
 
-export default function Page () {
-    return (
-        <>
-        <Userinfo/>
-        </>
-    )
+export default function Dashboard() {
+  return <UserInfo />;
 }

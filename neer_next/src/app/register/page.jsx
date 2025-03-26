@@ -1,9 +1,10 @@
-import Register from "../components/Register";
+import RegisterForm from "../components/Register";
 
-export default function Page() {
-    return (
-        <>
-        <Register/>
-        </>
-    )
+export default async function Register() {
+
+  return (
+    <div className="grid place-items-center h-screen">
+        <RegisterForm/>
+    </div>
+  )
 }

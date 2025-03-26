@@ -16,16 +16,21 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const res = await signIn("credentials",{
-                email,password,redirect:flase,
-            })
+            const res = await fetch("http://localhost:3001/api/register")
 
-            if(res.error){
-                setError("Invalid Credentials")
-                return;
+            const data = await res.json();
+
+            const user = data.results.find((item)=>item.email == email)
+            console.log("user",user)
+
+            if(user){
+                alert("Successfully Logged-In");
+                router.push("/dashboard")
             }
-
-            router.replace("dashboard");
+            else{
+                alert("Please fill the Correct information")
+                setError("incomplete data")
+            }
         } catch (error) {
             console.log(error)
         }

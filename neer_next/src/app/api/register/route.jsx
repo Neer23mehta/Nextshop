@@ -1,5 +1,5 @@
 import { connectionStr } from "../../../lib/db";
-import { User } from "../../../lib/models/users";
+import { User } from "../../../models/user";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs"
 import { NextResponse } from "next/server";
